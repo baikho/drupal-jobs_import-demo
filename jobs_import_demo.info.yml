@@ -1,0 +1,19 @@
+name: 'Jobs Import Demo'
+type: module
+description: 'Demo of a multilingual XML job import, using Drupal’s Migrate / Migrate Plus import stack.'
+package: 'Import'
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - drupal:content_translation
+  - drupal:datetime
+  - drupal:filter
+  - drupal:language
+  - drupal:link
+  - drupal:migrate
+  - drupal:node
+  - drupal:path
+  - drupal:text
+  - drupal:user
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+  - ultimate_cron:ultimate_cron

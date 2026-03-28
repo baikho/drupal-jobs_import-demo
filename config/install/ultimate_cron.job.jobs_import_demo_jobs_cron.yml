@@ -1,0 +1,30 @@
+uuid: a8c4e0d1-7b2a-4f9e-9c3d-1e2f3a4b5c6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - jobs_import_demo
+    - ultimate_cron
+title: 'Jobs Import Demo — jobs'
+id: jobs_import_demo_jobs_cron
+weight: 0
+module: jobs_import_demo
+callback: 'jobs_import_demo_cron:jobsImportCron'
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '0 * * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

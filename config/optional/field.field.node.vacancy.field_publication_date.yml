@@ -1,0 +1,21 @@
+uuid: 2a79486b-083a-9f08-4e76-cb5a49382716
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.vacancy
+  module:
+    - datetime
+id: node.vacancy.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: vacancy
+label: 'Publication date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

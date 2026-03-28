@@ -1,0 +1,129 @@
+id: jobs
+label: 'Jobs (demo)'
+migration_group: jobs_import_demo
+source:
+  plugin: job_feed_url
+  data_fetcher_plugin: http
+  data_parser_plugin: simple_xml
+  method: GET
+  track_changes: true
+  headers:
+    Accept: 'application/xml, text/xml;q=0.9, */*;q=0.8'
+  namespaces: { }
+  item_selector: '//Job/ExternalPublication/Publication'
+  fields:
+    -
+      name: publication_id
+      label: 'Publication ID'
+      selector: '@ID'
+    -
+      name: job_id
+      label: 'Job ID'
+      selector: 'ancestor::Job/@id'
+    -
+      name: locale
+      label: 'Publication locale'
+      selector: '@language'
+    -
+      name: title
+      label: Title
+      selector: 'Jobname'
+    -
+      name: teaser
+      label: Teaser
+      selector: 'ShortDescription'
+    -
+      name: subtitle
+      label: Subtitle
+      selector: 'Leadaftertitle'
+    -
+      name: published_on
+      label: 'Posted date'
+      selector: 'Publicationdate'
+    -
+      name: apply_url
+      label: 'Apply URL'
+      selector: 'URL'
+  ids:
+    job_id:
+      type: string
+    locale:
+      type: string
+
+process:
+  title:
+    plugin: skip_on_empty
+    source: title
+    method: row
+    message: 'Missing title'
+
+  langcode:
+    plugin: static_map
+    source: locale
+    map:
+      en_US: en
+      nl_NL: nl
+      fr_FR: fr
+    default_value: en
+
+  # Same job_id exists for every locale row; lookup by job_id alone can return
+  # several nids. Translation rows need one nid — use first id (same job).
+  nid:
+    -
+      plugin: migration_lookup
+      migration: jobs
+      source_ids:
+        jobs:
+          - job_id
+      no_stub: true
+    -
+      plugin: migration_lookup_first_nid
+    -
+      plugin: skip_on_empty
+      method: process
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+  field_description/value:
+    -
+      plugin: concat
+      source:
+        - teaser
+        - subtitle
+      delimiter: "\n\n"
+    -
+      plugin: callback
+      callable: html_entity_decode
+    -
+      plugin: skip_on_empty
+      method: process
+
+  field_description/format:
+    plugin: default_value
+    default_value: full
+
+  field_publication_date:
+    -
+      plugin: skip_on_empty
+      source: published_on
+      method: process
+    -
+      plugin: format_date
+      from_format: 'Y-m-d'
+      to_format: 'Y-m-d\TH:i:s'
+
+  field_website/uri:
+    plugin: skip_on_empty
+    source: apply_url
+    method: process
+
+  field_website/title:
+    plugin: default_value
+    default_value: ''
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: vacancy
+  translations: true

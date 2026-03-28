@@ -1,0 +1,23 @@
+uuid: 1968375a-f729-8e07-3d65-ba4938271605
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website
+    - node.type.vacancy
+  module:
+    - link
+id: node.vacancy.field_website
+field_name: field_website
+entity_type: node
+bundle: vacancy
+label: 'Apply / external link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

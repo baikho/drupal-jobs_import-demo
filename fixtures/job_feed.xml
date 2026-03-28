@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fictional HR feed (Publication per locale). Each Publication has an ID attribute. -->
+<Jobs>
+  <Job id="DEMO-1001" ID="DEMO-1001">
+    <ExternalPublication>
+      <Publication ID="DEMO-1001-en_US" language="en_US">
+        <Jobname>Developer Advocate</Jobname>
+        <ShortDescription>Help developers succeed with our APIs and tools.</ShortDescription>
+        <Leadaftertitle>Remote-first, documentation-focused team.</Leadaftertitle>
+        <Publicationdate>2026-01-15</Publicationdate>
+        <URL>https://www.example.org/jobs/apply/demo-1001</URL>
+      </Publication>
+      <Publication ID="DEMO-1001-nl_NL" language="nl_NL">
+        <Jobname>Developer Advocate</Jobname>
+        <ShortDescription>Ontwikkelaars helpen slagen met onze API's en tools.</ShortDescription>
+        <Leadaftertitle>Remote-first, focus op documentatie.</Leadaftertitle>
+        <Publicationdate>2026-01-15</Publicationdate>
+        <URL>https://www.example.org/jobs/apply/demo-1001</URL>
+      </Publication>
+    </ExternalPublication>
+  </Job>
+  <Job id="DEMO-1002" ID="DEMO-1002">
+    <ExternalPublication>
+      <Publication ID="DEMO-1002-en_US" language="en_US">
+        <Jobname>Site Reliability Engineer</Jobname>
+        <ShortDescription>Keep production calm, observable, and boring—in a good way.</ShortDescription>
+        <Leadaftertitle>On-call rotation with strong blameless culture.</Leadaftertitle>
+        <Publicationdate>2026-02-01</Publicationdate>
+        <URL>https://www.example.org/jobs/apply/demo-1002</URL>
+      </Publication>
+    </ExternalPublication>
+  </Job>
+  <Job id="DEMO-1003" ID="DEMO-1003">
+    <ExternalPublication>
+      <Publication ID="DEMO-1003-fr_FR" language="fr_FR">
+        <Jobname>Ingénieur logiciel</Jobname>
+        <ShortDescription>Concevoir et maintenir des services fiables, du prototype à la production.</ShortDescription>
+        <Leadaftertitle>Équipe produit, stack moderne, télétravail possible.</Leadaftertitle>
+        <Publicationdate>2026-03-01</Publicationdate>
+        <URL>https://www.example.org/jobs/apply/demo-1003</URL>
+      </Publication>
+    </ExternalPublication>
+  </Job>
+</Jobs>

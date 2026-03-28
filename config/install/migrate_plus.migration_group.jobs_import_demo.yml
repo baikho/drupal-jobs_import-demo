@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: jobs_import_demo
+label: 'Jobs Import Demo'
+description: 'Demonstration job posting import (XML).'

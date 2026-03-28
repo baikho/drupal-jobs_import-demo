@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for Jobs Import Demo (XML job import).
+ */
+
+declare(strict_types=1);
+
+use Drupal\language\Entity\ConfigurableLanguage;
+
+/**
+ * Implements hook_install().
+ */
+function jobs_import_demo_install(): void {
+  $language_manager = \Drupal::languageManager();
+  // Demo fixture includes nl_NL and fr_FR rows; ensure languages exist.
+  if (!$language_manager->getLanguage('nl')) {
+    ConfigurableLanguage::createFromLangcode('nl')->save();
+  }
+  if (!$language_manager->getLanguage('fr')) {
+    ConfigurableLanguage::createFromLangcode('fr')->save();
+  }
+}

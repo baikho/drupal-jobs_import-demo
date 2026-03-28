@@ -1,0 +1,6 @@
+jobs_import_demo.demo_feed:
+  path: '/jobs-import-demo/demo-feed.xml'
+  defaults:
+    _controller: '\Drupal\jobs_import_demo\Controller\DemoJobFeedController::serve'
+  requirements:
+    _access: 'TRUE'

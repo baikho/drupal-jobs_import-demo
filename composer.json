@@ -1,0 +1,26 @@
+{
+    "name": "baikho/drupal-jobs_import_demo",
+    "type": "drupal-module",
+    "description": "Drupal Demo multilingual XML job import.",
+    "keywords": [
+        "Drupal"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Sang Lostrie",
+            "email": "sang.lostrie@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "composer/installers": "^1.9 || ^2",
+        "drupal/core": "^10.3 || ^11",
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_tools": "^6.0",
+        "drupal/ultimate_cron": "^2.0@beta"
+    },
+    "extra": {
+        "installer-name": "jobs_import_demo"
+    }
+}

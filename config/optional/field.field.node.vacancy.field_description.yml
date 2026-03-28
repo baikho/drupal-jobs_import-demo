@@ -1,0 +1,24 @@
+uuid: 3b8a597c-194b-0a09-5f87-dc6b5a493827
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - filter.format.full
+    - node.type.vacancy
+  module:
+    - text
+id: node.vacancy.field_description
+field_name: field_description
+entity_type: node
+bundle: vacancy
+label: 'Job description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full
+field_type: text_long

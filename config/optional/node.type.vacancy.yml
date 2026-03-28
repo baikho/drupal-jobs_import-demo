@@ -1,0 +1,13 @@
+uuid: 7f2e9d1c-5a8b-4f3e-9d2c-1b0a8e7f6d5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+name: Vacancy
+type: vacancy
+description: 'Job postings (created by Jobs Import Demo optional config, or your own setup).'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

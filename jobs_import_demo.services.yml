@@ -1,0 +1,7 @@
+services:
+  jobs_import_demo.feed_endpoint:
+    class: Drupal\jobs_import_demo\Service\FeedEndpoint
+    arguments: ['@extension.list.module', '@url_generator']
+
+  jobs_import_demo_cron:
+    class: Drupal\jobs_import_demo\Service\ImportCronService
